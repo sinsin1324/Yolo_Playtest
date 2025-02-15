@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-I/usr/local/include/opencv4",
+                "-L/usr/local/lib",
+                "-lopencv_core",
+                "-lopencv_highgui",
+                "-lopencv_imgproc",
+                "-lopencv_dnn",
+                "-lopencv_videoio",
+                "-lopencv_imgcodecs",
+                "${workspaceFolder}/src/*.cpp",
+                "-o",
+                "${workspaceFolder}/build/a.out"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Generated task by VSCode"
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/a.out",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Generated task by VSCode"
+        }
+    ]
+}
